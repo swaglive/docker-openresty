@@ -1,12 +1,8 @@
-![docker-publish-to-dh](https://github.com/swaglive/docker-image-template/workflows/docker-publish-to-dh/badge.svg)
+![docker-publish-to-dh](https://github.com/swaglive/docker-openresty/workflows/docker-publish-to-dh/badge.svg)
 
-This template will:
-1. Trigger workflow when
-    - git push to branch `**`
-2. Build a docker image from this repo.
-3. Push docker images to different Docker Registry on branch `master`:
-    - [Docker Hub](#docker-hub)
+## Running
 
-## [Docker Hub](https://hub.docker.com/)
-- [Create acceess token from Docker Hub](https://docs.docker.com/docker-hub/access-tokens/#create-an-access-token)
-    - Add `secrets.DOCKER_USERNAME`, `secrets.DOCKER_PASSWORD`: Setting -> Secrets -> New secret
+Example
+```
+docker run -it --rm --cap-add SYS_ADMIN --device /dev/fuse -v "$(pwd)/gcs.json:/gcs.json:ro" -e "GCSFUSE_OPTIONS=--key-file /gcs.json" -e GOOGLE_CLOUD_STORAGE_BUCKET=mybucket 17media/openresty:gcs
+```
