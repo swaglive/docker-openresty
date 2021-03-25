@@ -16,5 +16,5 @@ docker-compose up --build
 ```
 
 ## Other Info
-[1] Packaged modules `Makefile.module-*`: https://hg.nginx.org/pkg-oss/file/tip/alpine
-[2] DockerHub - nginx: https://hub.docker.com/_/nginx
+- [1] Packaged modules `Makefile.module-*`: https://hg.nginx.org/pkg-oss/file/tip/alpine
+- [2] DockerHub - nginx: https://hub.docker.com/_/nginx
