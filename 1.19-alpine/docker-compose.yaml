@@ -1,0 +1,16 @@
+version: "3.3"
+services:
+  web:
+    build:
+      context: ./docker
+      args:
+        ENABLED_MODULES: headers-more echo brotli geoip2
+    image: swaglive/nginx:1.19-alpine
+    volumes:
+      - ./test/nginx.conf:/etc/nginx/nginx.conf
+      - ./test/maxmind-city.mmdb:/etc/maxmind-city.mmdb
+      - ./test/conf.d:/etc/nginx/conf.d
+      - ./test/tmpl:/etc/nginx/tmpl
+
+    ports:
+      - "8080:80"
